@@ -26,8 +26,8 @@ import { Button } from '@material-ui/core';
 
 const SvelteTestCase = () => {
   const [svelteTestCase, dispatchToSvelteTestCase] = useReducer(
-    svelteTestCaseReducer,
-    svelteTestCaseState
+    SvelteTestCaseReducer,
+    SvelteTestCaseState
   );
 
   const { describeBlocks, itStatements, statements } = svelteTestCase;
