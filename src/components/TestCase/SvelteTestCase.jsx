@@ -30,7 +30,7 @@ const SvelteTestCase = () => {
     SvelteTestCaseState
   );
 
-  const { describeBlocks, itStatements, statements } = svelteTestCase;
+  const { describeBlocks, itStatements, statements } = SvelteTestCase;
   const [{ mockData }, dispatchToMockData] = useContext(MockDataContext);
   const [{ filePathMap, theme }] = useContext(GlobalContext);
 
@@ -78,13 +78,14 @@ const SvelteTestCase = () => {
   };
 
   return (
-    <SvelteTestCaseContext.Provider value={[svelteTestCase, dispatchToSvelteTestCase]}>
-      <div id={styles[`SvelteTestCase${theme}`]}>
+    <SvelteTestCaseContext.Provider value={[SvelteTestCase, dispatchToSvelteTestCase]}>
+      <div id={styles[`ReactTestCase${theme}`]}>
+        <h2>Svelte Testing</h2>
         <SvelteTestMenu />
         <div className={styles.header}>
           <div className={styles.searchInput}>
             <SearchInput
-              svelteTestCase
+              SvelteTestCase
               dispatch={dispatchToSvelteTestCase}
               action={updateRenderComponent}
               filePathMap={filePathMap}
